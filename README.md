@@ -1,4 +1,4 @@
-# [![Firefox Send](./assets/icon.svg)](https://send.firefox.com/) Firefox Send
+# [![Firefox Send](./assets/icon.svg)](https://send.rooday.com/) ROODAY Send
 
 [![CircleCI](https://img.shields.io/circleci/project/github/mozilla/send.svg)](https://circleci.com/gh/mozilla/send)
 
@@ -13,9 +13,6 @@
 * [Development](#development)
 * [Commands](#commands)
 * [Configuration](#configuration)
-* [Localization](#localization)
-* [Contributing](#contributing)
-* [Testing](#testing)
 * [Deployment](#deployment)
 * [Android](#android)
 * [License](#license)
@@ -24,7 +21,7 @@
 
 ## What it does
 
-A file sharing experiment which allows you to send encrypted files to other users.
+A file sharing experiment which allows you to send encrypted files to other users. This is a fork of the original Firefox Send that supports using Azure as a storage engine, as well as only accepts uploads from whitelisted users.
 
 ---
 
@@ -65,30 +62,6 @@ Then, browse to http://localhost:8080
 ## Configuration
 
 The server is configured with environment variables. See [server/config.js](server/config.js) for all options and [docs/docker.md](docs/docker.md) for examples.
-
----
-
-## Localization
-
-Firefox Send localization is managed via [Pontoon](https://pontoon.mozilla.org/projects/test-pilot-firefox-send/), not direct pull requests to the repository. If you want to fix a typo, add a new language, or simply know more about localization, please get in touch with the [existing localization team](https://pontoon.mozilla.org/teams/) for your language or Mozilla’s [l10n-drivers](https://wiki.mozilla.org/L10n:Mozilla_Team#Mozilla_Corporation) for guidance.
-
-see also [docs/localization.md](docs/localization.md)
-
----
-
-## Contributing
-
-Pull requests are always welcome! Feel free to check out the list of ["good first issues"](https://github.com/mozilla/send/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
-
----
-
-## Testing
-
-| ENVIRONMENT | URL
-|-------------|-----
-| Production  | <https://send.firefox.com/>
-| Stage       | <https://stage.send.nonprod.cloudops.mozgcp.net/>
-| Development | <https://send2.dev.lcip.org/>
 
 ---
 
