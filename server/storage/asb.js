@@ -2,7 +2,6 @@ const {
   BlobServiceClient,
   StorageSharedKeyCredential
 } = require('@azure/storage-blob');
-const fs = require('fs');
 
 class AzureBlobStorage {
   constructor(config, log) {
@@ -24,7 +23,7 @@ class AzureBlobStorage {
 
   async length(id) {
     const blobClient = this.containerClient.getBlockBlobClient(id);
-    const result = blobClient.getProperties();
+    const result = await blobClient.getProperties();
     return Number(result.contentLength);
   }
 
@@ -34,10 +33,9 @@ class AzureBlobStorage {
     return result.readableStreamBody;
   }
 
-  set(id, file) {
+  async set(id, file) {
     const blobClient = this.containerClient.getBlockBlobClient(id);
-    const { size } = fs.statSync(file);
-    return blobClient.upload(file, size);
+    return await blobClient.uploadStream(file);
   }
 
   del(id) {

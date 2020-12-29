@@ -7,17 +7,17 @@ const conf = convict({
   asb_account: {
     format: String,
     default: '',
-    env: 'S3_BUCKET'
+    env: 'ASB_ACCOUNT'
   },
   asb_accountKey: {
     format: String,
     default: '',
-    env: 'S3_BUCKET'
+    env: 'ASB_ACCOUNTKEY'
   },
   asb_containerName: {
     format: String,
     default: '',
-    env: 'S3_BUCKET'
+    env: 'ASB_CONTAINERNAME'
   },
   s3_bucket: {
     format: String,

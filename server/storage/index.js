@@ -59,13 +59,13 @@ class DB {
       throw new Error(info.flagged ? 'flagged' : 'dead');
     }
     const length = await this.storage.length(info.filePath);
-    return { length, stream: this.storage.getStream(info.filePath) };
+    const stream = await this.storage.getStream(info.filePath);
+    return { length, stream };
   }
 
   async set(id, file, meta, expireSeconds = config.default_expire_seconds) {
     const prefix = getPrefix(expireSeconds);
     const filePath = `${prefix}-${id}`;
-    this.log.info('reee', { test: 'asd' });
     await this.storage.set(filePath, file);
     if (meta) {
       this.redis.hmset(id, { prefix, ...meta });
