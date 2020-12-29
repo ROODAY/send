@@ -4,6 +4,21 @@ const path = require('path');
 const { randomBytes } = require('crypto');
 
 const conf = convict({
+  asb_account: {
+    format: String,
+    default: '',
+    env: 'S3_BUCKET'
+  },
+  asb_accountKey: {
+    format: String,
+    default: '',
+    env: 'S3_BUCKET'
+  },
+  asb_containerName: {
+    format: String,
+    default: '',
+    env: 'S3_BUCKET'
+  },
   s3_bucket: {
     format: String,
     default: '',
@@ -147,7 +162,7 @@ const conf = convict({
   },
   base_url: {
     format: 'url',
-    default: 'https://send.firefox.com',
+    default: 'https://send.rooday.com',
     env: 'BASE_URL'
   },
   file_dir: {
@@ -157,7 +172,7 @@ const conf = convict({
   },
   fxa_required: {
     format: Boolean,
-    default: true,
+    default: false,
     env: 'FXA_REQUIRED'
   },
   fxa_url: {

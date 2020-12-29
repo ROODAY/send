@@ -10,7 +10,9 @@ function getPrefix(seconds) {
 class DB {
   constructor(config) {
     let Storage = null;
-    if (config.s3_bucket) {
+    if (config.asb_account) {
+      Storage = require('./asb');
+    } else if (config.s3_bucket) {
       Storage = require('./s3');
     } else if (config.gcs_bucket) {
       Storage = require('./gcs');
@@ -63,6 +65,7 @@ class DB {
   async set(id, file, meta, expireSeconds = config.default_expire_seconds) {
     const prefix = getPrefix(expireSeconds);
     const filePath = `${prefix}-${id}`;
+    this.log.info('reee', { test: 'asd' });
     await this.storage.set(filePath, file);
     if (meta) {
       this.redis.hmset(id, { prefix, ...meta });

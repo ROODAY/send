@@ -1,3 +1,4 @@
+require('dotenv').config();
 const assets = require('../../common/assets');
 const routes = require('../routes');
 const pages = require('../routes/pages');
