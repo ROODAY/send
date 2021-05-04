@@ -1,3 +1,5 @@
+Archived this because now [Wormhole](https://wormhole.app/) exists.
+
 # [![Firefox Send](./assets/icon.svg)](https://send.rooday.com/) ROODAY Send
 
 **Docs:** [FAQ](docs/faq.md), [Encryption](docs/encryption.md), [Build](docs/build.md), [Docker](docs/docker.md), [Metrics](docs/metrics.md), [More](docs/)
